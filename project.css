@@ -1,0 +1,376 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    background-color: #f4f4f4;
+    overflow-x: hidden;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    padding: 2rem 10%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2rem; /* 32px */
+    margin: 0;
+    color: #0a0201;
+}
+
+/* Navigation Bar Styles */
+.nav-bar {
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar a {
+    color: black;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+    font-size: 1.3rem;
+}
+
+.nav-bar a:hover {
+    color: #5c6bc0; /* Change color on hover */
+}
+
+/* Hamburger Menu Icon (Hidden by Default) */
+.menu-icon {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block; /* Show hamburger icon on mobile */
+    }
+
+    .nav-bar {
+        display: none; /* Hide nav links by default on mobile */
+        flex-direction: column;
+        position: absolute;
+        top: 80px; /* Adjust based on header height */
+        right: 10%;
+        background-color: white;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+        border-radius: 5px;
+    }
+
+    .nav-bar.active {
+        display: flex; /* Show nav links when active */
+    }
+}
+/* Humanizing Section Styles */
+.humanizing-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #060c30;
+    color: white;
+    padding: 40px 10%;
+    margin: 0 auto;
+    max-width: 1200px;
+    flex-direction: column; /* Stack content on small screens */
+    position: relative; /* Ensure the section is positioned correctly */
+    overflow: hidden; /* Prevent overflow issues */
+}
+
+@media (min-width: 768px) {
+    .humanizing-section {
+        flex-direction: row; /* Side-by-side on larger screens */
+        height: 450px; /* Fixed height for larger screens */
+    }
+}
+
+.content {
+    max-width: 100%; /* Full width on small screens */
+    flex: 1;
+    text-align: center; /* Center text on small screens */
+    z-index: 2; /* Ensure content is above the image */
+}
+
+@media (min-width: 768px) {
+    .content {
+        max-width: 55%; /* Adjust width for larger screens */
+        text-align: left; /* Align text to the left on larger screens */
+    }
+}
+
+.content h1 {
+    font-size: 2.5rem; /* Adjust font size for smaller screens */
+    margin: 0 0 20px 0;
+    font-family: serif;
+    padding: 10px;
+}
+
+@media (min-width: 768px) {
+    .content h1 {
+        font-size: 3.3rem; /* Larger font size for larger screens */
+    }
+}
+
+.content p {
+    font-size: 1.1rem; /* Adjust font size for smaller screens */
+    margin: 0 0 20px 0;
+    font-family: serif;
+    padding: 10px;
+}
+
+@media (min-width: 768px) {
+    .content p {
+        font-size: 1.3rem; /* Larger font size for larger screens */
+    }
+}
+
+.view-plans-button {
+    background-color: white;
+    color: #5c6bc0;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.view-plans-button:hover {
+    background-color: #5c6bc0;
+    color: white;
+}
+
+.image {
+    max-width: 100%; /* Ensure the image is responsive */
+    height: auto;
+    margin-top: 20px; /* Adjust margin for smaller screens */
+    z-index: 1; /* Ensure the image is below the content */
+    text-align: center; /* Center the image on small screens */
+}
+
+@media (min-width: 768px) {
+    .image {
+        margin-top: 0; /* Remove margin for larger screens */
+        flex: 1; /* Allow the image to take up remaining space */
+        text-align: right; /* Align the image to the right on larger screens */
+    }
+}
+
+.image img {
+    max-width: 100%; /* Ensure the image scales properly */
+    height: auto;
+    display: block; /* Remove extra space below the image */
+}
+/* We're Different Section Styles */
+#description2 {
+    text-align: center;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1200px;
+    background-color: #f9f9f9; /* Light background for the section */
+}
+
+.short-line{
+    width: 10%;
+   margin-top: 90px;
+   margin-left: 0px;
+   border: 1px solid black;
+}
+
+.widgets {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+    gap: 20px; /* Space between widgets */
+}
+
+.widget {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px; /* Rounded corners */
+    padding: 30px;
+    width: 30%; /* Equal width for all widgets */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.widget:hover {
+    transform: translateY(-10px); /* Lift the widget on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+.widget-icon {
+    width: 50px; /* Icon size */
+    height: 50px;
+    margin-bottom: 20px; /* Space below the icon */
+}
+
+.widget h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #040b34; /* Dark blue color for headings */
+}
+
+.widget p {
+    font-size: 1rem;
+    color: #666; /* Subdued text color for descriptions */
+}
+
+@media (max-width: 768px) {
+    .widgets {
+        flex-direction: column; /* Stack widgets vertically on small screens */
+    }
+
+    .widget {
+        width: 100%; /* Full width on small screens */
+    }
+}
+/* Banner Section Styles */
+.banner {
+    background-color: #040b34;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    display: flex;
+    justify-content: center; /* Center the contents horizontally */
+    align-items: center; /* Center the contents vertically */
+    height:200px;
+    max-width: 1180px; /* Adjust this value as needed */
+    gap: 0px; /* Add space between the content and button */
+}
+
+.banner-content {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+}
+
+.banner p {
+    font-size: 2.8rem; /* Smaller text */
+    max-width: 58%;
+    font-family: serif;
+    margin: 0; /* Remove default margin */
+}
+
+.banner-button {
+    background-color: #040b34;
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+    /* Remove margin-left as it's no longer needed */
+}
+
+.banner-button:hover {
+    background-color: #5c6bc0;
+    color: white;
+}
+/* Footer Styles */
+footer {
+    background-color: white;
+    padding: 20px 10%;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    flex-wrap: wrap; /* Allow wrapping */
+}
+
+.footer-links h4 {
+    margin-bottom: 10px;
+}
+
+.footer-links ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-links a {
+    color: rgb(24, 22, 22);
+    text-decoration: none;
+}
+
+.contact {
+    padding: 40px;
+    justify-content: space-between;
+    display: flex;
+    margin-bottom: 0px;
+}
+
+.social-icons a {
+    margin:10px;
+    color: #333;
+    font-size: 1.5rem;
+    
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .humanizing-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .content {
+        max-width: 100%;
+    }
+
+    .image {
+        max-width: 100%;
+        margin-top: 20px;
+    }
+
+    .banner {
+        flex-direction: column;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .banner-content {
+        max-width: 100%;
+        margin-bottom: 20px;
+        
+    }
+
+    .footer-links div {
+        width: 50%; /* Two columns on small screens */
+    }
+}
+
+
+
+/* Humanizing Section Styles */
+#description2 h2{
+text-align: left;
+    font-size: 2.6rem;
+    padding: 10px;
+}
+
+/* We're Different Section Styles */
+#description2 {
+    text-align: center;
+    padding: 40px 10%; /* Keep existing padding */
+    margin: 80px auto; /* Add margin-top and margin-bottom for more space */
+    max-width: 1200px;
+    background-color: #f9f9f9; /* Light background for the section */
+}
+
+/* Banner Section Styles */

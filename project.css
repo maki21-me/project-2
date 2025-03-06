@@ -7,6 +7,7 @@ body {
 }
 
 /* Header Styles */
+/* Header Styles */
 header {
     display: flex;
     align-items: center;
@@ -14,12 +15,9 @@ header {
     background-color: white;
     padding: 2rem 10%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-header h1 {
-    font-size: 2rem; /* 32px */
-    margin: 0;
-    color: #0a0201;
+    position: relative;
+    z-index: 999; /* Higher than .humanizing-section */
+    min-height: 80px; /* Ensure header has enough height */
 }
 
 /* Navigation Bar Styles */
@@ -58,6 +56,46 @@ header h1 {
         display: none; /* Hide nav links by default on mobile */
         flex-direction: column;
         position: absolute;
+        top: 100%; /* Position dropdown below the header */
+        right: 10%;
+        background-color: white;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+        border-radius: 5px;
+        z-index: 1000; /* Ensure it appears above other elements */
+        width: 200px; /* Set a fixed width for the dropdown */
+    }
+
+    .nav-bar.active {
+        display: flex; /* Show nav links when active */
+    }
+
+    .nav-bar a {
+        margin: 10px 0; /* Add spacing between links */
+    }
+}
+
+.nav-bar a:hover {
+    color: #5c6bc0; /* Change color on hover */
+}
+
+/* Hamburger Menu Icon (Hidden by Default) */
+.menu-icon {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block; /* Show hamburger icon on mobile */
+    }
+
+    .nav-bar {
+        display: none; /* Hide nav links by default on mobile */
+        flex-direction: column;
+        position: absolute;
         top: 80px; /* Adjust based on header height */
         right: 10%;
         background-color: white;
@@ -70,7 +108,6 @@ header h1 {
         display: flex; /* Show nav links when active */
     }
 }
-/* Humanizing Section Styles */
 .humanizing-section {
     display: flex;
     justify-content: space-between;
@@ -78,20 +115,21 @@ header h1 {
     background-color: #060c30;
     color: white;
     padding: 40px 10%;
-    margin: 0 auto;
+    margin: 100px auto 0; /* Added margin-top to create space */
     max-width: 1200px;
     flex-direction: column; /* Stack content on small screens */
     position: relative; /* Ensure the section is positioned correctly */
-    overflow: hidden; /* Prevent overflow issues */
+    overflow: visible; /* Changed from hidden to visible */
+    z-index: 1; /* Lower than the header */
 }
 
 @media (min-width: 768px) {
     .humanizing-section {
         flex-direction: row; /* Side-by-side on larger screens */
         height: 450px; /* Fixed height for larger screens */
+        margin-top: 0; /* Reset margin-top for larger screens */
     }
 }
-
 .content {
     max-width: 100%; /* Full width on small screens */
     flex: 1;
